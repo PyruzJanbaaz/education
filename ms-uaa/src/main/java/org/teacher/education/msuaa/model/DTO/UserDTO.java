@@ -3,6 +3,7 @@ package org.teacher.education.msuaa.model.DTO;
 import lombok.Data;
 
 import javax.validation.constraints.*;
+import java.sql.Date;
 import java.util.List;
 
 @Data
@@ -14,7 +15,6 @@ public class UserDTO {
     @Size(max = 45, message = "{validation.message.incorrect.length}")
     private String lastName;
 
-    private Long companyId;
 
     @NotBlank
     @Size(max = 45, message = "{validation.message.incorrect.length}")
@@ -58,7 +58,7 @@ public class UserDTO {
     @Size(max = 250, message = "{validation.message.incorrect.length}")
     private String address;
 
-    private Long birthDate;
+    private Date birthDate;
 
     private Integer cityId;
     private Integer ProvinceId;
@@ -70,5 +70,5 @@ public class UserDTO {
 
     //private Boolean deleted = false;
 
-    private Boolean enabled = true;
+    private Boolean enabled;
 }

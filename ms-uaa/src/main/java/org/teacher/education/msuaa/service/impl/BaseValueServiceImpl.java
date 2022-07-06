@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.teacher.education.msuaa.exception.GlobalExceptionHandler;
 import org.teacher.education.msuaa.exception.ResourceNotFoundException;
 import org.teacher.education.msuaa.mapper.BaseValueMapper;
-import org.teacher.education.msuaa.mapper.BaseValueTypeRepository;
+import org.teacher.education.msuaa.repository.BaseValueTypeRepository;
 import org.teacher.education.msuaa.model.DTO.BaseValueDTO;
 import org.teacher.education.msuaa.model.base.BaseDTO;
 import org.teacher.education.msuaa.model.base.MetaDTO;
@@ -64,10 +64,10 @@ public class BaseValueServiceImpl implements BaseValueService {
                 .engName(baseValueDTO.getEngName())
                 .priority(baseValueDTO.getPriority())
                 .parentId(baseValueDTO.getParentId())
-                .creatorUserId(baseValueDTO.getCreatorUserId())
+//                .creatorUserId(baseValueDTO.getCreatorUserId())
                 .baseValueType(baseValueTypeRepository.getByIdAndIsDeletedFalse(baseValueDTO.getBaseValueType().getId()))
                 .build();
-        newBaseValue.setCreatorUserId(baseValueDTO.getCreatorUserId());
+//        newBaseValue.setCreatorUserId(baseValueDTO.getCreatorUserId());
         baseValueRepository.save(newBaseValue);
         return new BaseDTO(MetaDTO.getInstance(applicationProperties), baseValueDTO);
     }
@@ -113,7 +113,7 @@ public class BaseValueServiceImpl implements BaseValueService {
     }
 
     @Override
-    public BaseDTO getMounths(Long baseValueTypeId) {
+    public BaseDTO getMonths(Long baseValueTypeId) {
 
         BaseValueType baseValueType = baseValueTypeRepository.getByIdAndIsDeletedFalse(baseValueTypeId);
         List<BaseValue> baseValues = baseValueRepository.findAllByBaseValueType_IdAndIsDeletedFalse(baseValueType.getId());

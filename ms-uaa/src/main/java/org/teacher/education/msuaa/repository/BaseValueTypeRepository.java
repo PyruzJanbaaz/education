@@ -1,4 +1,4 @@
-package org.teacher.education.msuaa.mapper;
+package org.teacher.education.msuaa.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.teacher.education.msuaa.model.entity.BaseValueType;

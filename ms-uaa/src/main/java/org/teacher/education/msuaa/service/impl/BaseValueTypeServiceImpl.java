@@ -3,7 +3,7 @@ package org.teacher.education.msuaa.service.impl;
 import org.springframework.stereotype.Service;
 import org.teacher.education.msuaa.exception.GlobalExceptionHandler;
 import org.teacher.education.msuaa.mapper.BaseValueTypeMapper;
-import org.teacher.education.msuaa.mapper.BaseValueTypeRepository;
+import org.teacher.education.msuaa.repository.BaseValueTypeRepository;
 import org.teacher.education.msuaa.model.DTO.BaseValueTypeDTO;
 import org.teacher.education.msuaa.model.base.BaseDTO;
 import org.teacher.education.msuaa.model.base.MetaDTO;

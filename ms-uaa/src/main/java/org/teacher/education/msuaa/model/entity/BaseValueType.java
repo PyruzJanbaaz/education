@@ -20,10 +20,10 @@ import java.util.List;
 @NoArgsConstructor
 public class BaseValueType extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
-    private Long id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "Id")
+//    private Long id;
     @Column(name = "TypeName")
     private String typeName;
     @Column(name = "TypeEngName")

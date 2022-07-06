@@ -3,10 +3,7 @@ package org.teacher.education.msuaa.model.base;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -17,7 +14,11 @@ import java.util.Date;
 @SuperBuilder
 @Getter
 @Setter
-public class BaseEntity {
+public class BaseEntity<T extends Long> {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected T id;
 
     @Column(name = "createDateTime")
     protected Date createDateTime;
@@ -25,8 +26,8 @@ public class BaseEntity {
     @Column(name = "modifyDateTime")
     protected Date modifyDateTime;
 
-    @Column(name = "creatorUserId")
-    protected Long creatorUserId;
+//    @Column(name = "creatorUserId")
+//    protected Long creatorUserId;
 
 
     @Column(name = "is_deleted")
@@ -34,7 +35,7 @@ public class BaseEntity {
 
     @PrePersist
     protected void onCreate() {
-        creatorUserId=15L;
+//        creatorUserId=15L;
         createDateTime = new Timestamp(System.currentTimeMillis());
         isDeleted = false;
         modifyDateTime = new Timestamp(System.currentTimeMillis());

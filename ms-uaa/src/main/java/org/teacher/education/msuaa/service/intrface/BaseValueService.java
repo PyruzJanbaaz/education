@@ -18,7 +18,7 @@ public interface BaseValueService {
 
     BaseDTO getValue(Long baseValueTypeId);
 
-    BaseDTO getMounths(Long baseValueTypeId);
+    BaseDTO getMonths(Long baseValueTypeId);
 
     BaseDTO getYears(Long baseValueTypeId);
 
